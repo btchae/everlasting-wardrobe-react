@@ -20,6 +20,8 @@ app.use(methodOverride(function(req, res) {
 }));
 
 //Controllers
+var clothesController = require('./controllers/clothes.js');
+app.use ('/clothes', clothesController)
 
 //Listen
 app.listen(port);
