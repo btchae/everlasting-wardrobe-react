@@ -28,8 +28,9 @@ var TopComponent = React.createClass({
 		console.log(this.state.display);
 			return (
 				<div>
-				<headerComponent />
-				<footerComponent />
+				<HeaderComponent/>
+				<homePage/>
+				<FooterComponent />
 				</div>
 			)
 
@@ -38,10 +39,10 @@ var TopComponent = React.createClass({
 // =========================
 // Header Component
 // =========================
-var headerComponent = React.createClass({
+var HeaderComponent = React.createClass({
 	render: function() {
 		console.log('header');
-		if (this.state.authUser === true) {
+		if ('24' === '24') {
 			return (
 				<div>
 				Logged In
@@ -59,7 +60,7 @@ var headerComponent = React.createClass({
 // =========================
 // Footer Component
 // =========================
-var footerComponent = React.createClass({
+var FooterComponent = React.createClass({
 	render: function() {
 		console.log('footer');
 		return (
