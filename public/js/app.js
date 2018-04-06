@@ -29,7 +29,7 @@ var TopComponent = React.createClass({
 			return (
 				<div>
 				<HeaderComponent/>
-				<homePage/>
+				<HomePage/>
 				<FooterComponent />
 				</div>
 			)
@@ -42,7 +42,7 @@ var TopComponent = React.createClass({
 var HeaderComponent = React.createClass({
 	render: function() {
 		console.log('header');
-		if ('24' === '24') {
+		if ('23' === '24') {
 			return (
 				<div>
 				Logged In
@@ -78,7 +78,7 @@ var contentComponent
 // =========================
 // Home Page
 // =========================
-var homePage = React.createClass({
+var HomePage = React.createClass({
 	render: function() {
 		console.log('more rendering');
 		return(
@@ -92,15 +92,15 @@ var homePage = React.createClass({
 // =========================
 // Sign In
 // =========================
-var signIn
+var SignIn
 // =========================
 // Sign Up
 // =========================
-var signUp
+var SignUp
 // =========================
 // How It Works
 // =========================
-var howItWorks
+var HowItWorks
 
 // =========================
 //  REACT DOM
