@@ -6,6 +6,7 @@ Important Notes:
 -Sub Items only listed for jazz right now
 -Express Yourself the only child component of How It Works
 -Needs to be DRYer, still reading up on conditional component rendering.
+-Signup/Sign In forms don't work, just place holders for now.
 
 Start up instructions:
 npm install
