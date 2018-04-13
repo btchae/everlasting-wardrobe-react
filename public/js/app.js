@@ -1,3 +1,7 @@
+//Component Mapping
+//Top Component-->Header/Footer/Content
+///Content-->HomePage/SignIn/SingUp/HowItWorks
+
 // =========================
 // Top Component
 // =========================
@@ -29,7 +33,7 @@ var TopComponent = React.createClass({
 			return (
 				<div>
 				<HeaderComponent/>
-				<HomePage/>
+				<ContentComponent/>
 				<FooterComponent />
 				</div>
 			)
@@ -57,6 +61,7 @@ var HeaderComponent = React.createClass({
 		}
 	}
 })
+
 // =========================
 // Footer Component
 // =========================
@@ -74,7 +79,51 @@ var FooterComponent = React.createClass({
 // =========================
 // Content Component
 // =========================
-var contentComponent
+var ContentComponent = React.createClass({
+	getInitialState: function() {
+		return {
+			display: 'home'
+		}
+	},
+	changeDisplay: function(displaySetting) {
+		console.log(displaySetting);
+		this.setState({display: displaySetting});
+	},
+
+	render: function() {
+///content will change
+		console.log('rendering content');
+		return(
+			<NavBar changeDisplay={this.changeDisplay}/>
+		)
+
+	}
+})
+
+// =========================
+// NavBar Component
+// =========================
+var NavBar = React.createClass ({
+	handleClick: function(e) {
+		console.log(typeof e.target);
+		console.log(e.target);
+//		this.props.changeDisplay(displaySetting);
+	},
+	render: function() {
+		return(
+			<ul>
+				<li 
+					className='home'
+					onClick={this.handleClick}>Home</li>
+				<li>How it Works</li>
+				<li>Sign Up</li>
+				<li>Sign In</li>
+			</ul>
+		)
+
+	}
+})
+
 // =========================
 // Home Page
 // =========================
@@ -92,11 +141,49 @@ var HomePage = React.createClass({
 // =========================
 // Sign In
 // =========================
-var SignIn
+var SignIn = React.createClass({
+	render: function() {
+	<div className="login-form" >
+        <h3>Please Sign In</h3>
+        <form className="log">
+          <label htmlFor="username">Username</label>
+          <input className="username-login-form" type="text" placeholder="username"/>
+          <br/>
+          <label htmlFor="password">Password</label>
+          <input className="password-login-form" type="password" placeholder="password"/>
+          <br/>
+          <input className="login-form-submit" type="submit"/>
+        </form>
+    </div>
+	}
+})
 // =========================
 // Sign Up
 // =========================
-var SignUp
+var SignUp = React.createClass({
+	render: function() {
+		<div className="signup-form" >
+				<h3>SignUp Fam!</h3>
+				<form className="log">
+					<label htmlFor="username">Username</label>
+					<input 
+						className="username-signup-form" 
+						type="text" 
+						placeholder="username"
+					/>
+					<br/>
+					<label htmlFor="password">Password</label>
+					<input 
+						className="password-signup-form"
+						type="text" 
+						placeholder="password"
+					/>
+					<br/>
+					<input className="signup-form-submit" type="submit"/>
+				</form>
+			</div>
+	}
+})
 // =========================
 // How It Works
 // =========================
